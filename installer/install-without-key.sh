@@ -10,7 +10,7 @@ rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/Africa/Algiers /etc/localtime &>/dev/null
 rm -rf /usr/local/lib/systemubu1 &>/dev/null
 rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version")
+v1=$(curl -sSL "https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/Version")
 echo "$v1" >/etc/versin_script
 [[ ! -e /etc/versin_script ]] && echo 1 >/etc/versin_script
 v22=$(cat /etc/versin_script)
@@ -118,7 +118,7 @@ os_system() {
 }
 
 repo() {
-  link="https://raw.githubusercontent.com/khaledagn/Multi-Script/main/Source-List/20.04.list"
+  link="https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/Source-List/20.04.list"
   case $1 in
   8 | 9 | 10 | 11 | 16.04 | 18.04 | 20.04 | 20.10 | 21.04 | 21.10 | 22.04) wget -O /etc/apt/sources.list ${link} &>/dev/null ;;
   esac
@@ -157,7 +157,7 @@ dependencias() {
 }
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "COMPLETED SYSTEM UPGRADE"
   print_center -ama "The installation will continue\nafter rebooting!!!"
   msg -bar
@@ -227,7 +227,7 @@ msg -bar2
 print_center -ama "AVAILABLE SCRIPT LIST"
 msg -bar
 #-BASH SOPORTE ONLINE
-wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
+wget https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/LINKS-LIBRARIES/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
 
 
@@ -240,19 +240,19 @@ install_official() {
   echo -e "$slogan"
   msg -bar
   clear && clear
-  mkdir /etc/VPS-AGN >/dev/null 2>&1
+  mkdir /etc/VPS-AR >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/VPS-AGN.tar.xz >/dev/null 2>&1
-  tar -xf VPS-AGN.tar.xz >/dev/null 2>&1
-  chmod +x VPS-AGN.tar.xz >/dev/null 2>&1
-  rm -rf VPS-AGN.tar.xz
+  wget https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/VPS-AR.tar.xz >/dev/null 2>&1
+  tar -xf VPS-AR.tar.xz >/dev/null 2>&1
+  chmod +x VPS-AR.tar.xz >/dev/null 2>&1
+  rm -rf VPS-AR.tar.xz
   cd
-  chmod -R 755 /etc/VPS-AGN
-  rm -rf /etc/VPS-AGN/MEUIPvps
-  echo "/etc/VPS-AGN/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-AGN/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
+  chmod -R 755 /etc/VPS-AR
+  rm -rf /etc/VPS-AR/MEUIPvps
+  echo "/etc/VPS-AR/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+  echo "/etc/VPS-AR/menu" >/usr/bin/VPSAR && chmod +x /usr/bin/VPSAR
   wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/monitor.sh -P /bin/
-  echo "$slogan" >/etc/VPS-AGN/message.txt
+  echo "$slogan" >/etc/VPS-AR/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
   [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
@@ -262,25 +262,25 @@ install_official() {
   [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
   [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
   [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-  [[ ! -d /etc/VPS-AGN/B-VPS-AGNuser ]] && mkdir /etc/VPS-AGN/B-VPS-AGNuser
+  [[ ! -d /etc/VPS-AR/B-VPS-ARuser ]] && mkdir /etc/VPS-AR/B-VPS-AGNuser
   [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
   [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
   [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
   cd
-  [[ ! -d /etc/VPS-AGN/v2ray ]] && mkdir /etc/VPS-AGN/v2ray
-  [[ ! -d /etc/VPS-AGN/Slow ]] && mkdir /etc/VPS-AGN/Slow
-  [[ ! -d /etc/VPS-AGN/Slow/install ]] && mkdir /etc/VPS-AGN/Slow/install
-  [[ ! -d /etc/VPS-AGN/Slow/Key ]] && mkdir /etc/VPS-AGN/Slow/Key
+  [[ ! -d /etc/VPS-AR/v2ray ]] && mkdir /etc/VPS-AR/v2ray
+  [[ ! -d /etc/VPS-AR/Slow ]] && mkdir /etc/VPS-AR/Slow
+  [[ ! -d /etc/VPS-AR/Slow/install ]] && mkdir /etc/VPS-AR/Slow/install
+  [[ ! -d /etc/VPS-AR/Slow/Key ]] && mkdir /etc/VPS-AR/Slow/Key
   touch /usr/share/lognull &>/dev/null
-  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/resetsshdrop &>/dev/null
+  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/vpsvip7/VPS-AR/maIN/LINKS-LIBRARIES/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
   grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
   echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/Version")
   echo "$v1" >/etc/versin_script
-  wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null
+  wget -O /etc/versin_script_new https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/Version &>/dev/null
   echo '#!/bin/sh -e' >/etc/rc.local
   sudo chmod +x /etc/rc.local
   echo "sudo resetsshdrop" >>/etc/rc.local
@@ -289,14 +289,14 @@ install_official() {
   echo 'clear' >>.bashrc
   echo 'echo ""' >>.bashrc
   echo 'echo -e "\t\033[91m __      _______   _____              _____ _   _ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____|       /\   / ____| \ | | " ' >>.bashrc
-  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___ ______ /  \ | |  __|  \| |  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \______/ /\ \| | |_ |     |  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m    \  /  | |     ____) |    / ____ \ |__| | |\  | " ' >>.bashrc
-  echo 'echo -e "\t\033[91m     \/   |_|    |_____/    /_/    \_\_____|_| \_|" ' >>.bashrc
-  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
+  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____|       /\      7777  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___ ______ /  \     7  777  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \______/ /\ \    77777 " ' >>.bashrc
+  echo 'echo -e "\t\033[91m    \  /  | |     ____) |    / ____ \   7  77 " ' >>.bashrc
+  echo 'echo -e "\t\033[91m     \/   |_|    |_____/    /_/    \_\  7     77" ' >>.bashrc
+  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'mess1="$(less /etc/VPS-AGN/message.txt)" ' >>.bashrc
+  echo 'mess1="$(less /etc/VPS-AR/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
