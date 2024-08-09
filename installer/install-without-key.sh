@@ -125,7 +125,7 @@ repo() {
 }
 
 dependencias() {
-  soft="sudo bsdmainutils zip unzip ufw curl python python3 python3-pip openssl screen cron iptables lsof pv boxes nano at mlocate gawk grep bc jq curl npm nodejs socat netcat netcat-traditional net-tools cowsay figlet lolcat"
+  soft="sudo bsdmainutils zip unzip ufw curl python python3 python3-pip  screen cron iptables lsof pv nano at mlocate gawk grep bc jq  nodejs socat netcat netcat-traditional net-tools cowsay figlet lolcat"
 
   for i in $soft; do
     leng="${#i}"
@@ -303,7 +303,7 @@ install_official() {
   echo 'echo -e "\t\033[97mTO DISPLAY BASH PANEL TYPE: sudo VPSAGN or menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
   rm -rf /usr/bin/pytransform &>/dev/null
-  rm -rf VPS-AGN.sh
+  rm -rf VPS-AR.sh
   rm -rf lista-arq
   service ssh restart &>/dev/null
   clear && clear
