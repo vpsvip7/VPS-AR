@@ -13,8 +13,8 @@ _hora=$(printf '%(%D-%H:%M:%S)T')
 red=$(tput setaf 1)
 gren=$(tput setaf 2)
 yellow=$(tput setaf 3)
-SCPdir="/etc/VPS-AGN" && [[ ! -d ${SCPdir} ]] && exit 1
-DIR="/etc/VPS-AGN"
+SCPdir="/etc/VPS-AR" && [[ ! -d ${SCPdir} ]] && exit 1
+DIR="/etc/VPS-AR"
 SCPusr="${SCPdir}/controller"
 SCPfrm="${SCPdir}/tools"
 SCPinst="${SCPdir}/protocols"
@@ -39,9 +39,9 @@ msg() {
     aviso_bock() {
         echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡LOCKED SCRIPT ! \n————————————————————————————————————————————————————"' >/usr/bin/menu
         echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡LOCKED SCRIPT ! \n————————————————————————————————————————————————————"' >/usr/bin/VPS-AGN
-        rm -rf /etc/VPS-AGN
+        rm -rf /etc/VPS-AR
     }
-    local colors="/etc/VPS-AGN/colors"
+    local colors="/etc/VPS-AR/colors"
     if [[ ! -e $colors ]]; then
         COLOR[0]='\033[1;37m' #BRAN='\033[1;37m'
         COLOR[1]='\e[93m'     #RED='\e[31m'
@@ -207,7 +207,7 @@ atualiza_fun() {
         echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >>/etc/bash.bashrc.2
         mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
         echo "${SCPdir}/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-        echo "${SCPdir}/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
+        echo "${SCPdir}/menu" >/usr/bin/VPSAR && chmod +x /usr/bin/VPSAR
         echo "$Key" >${SCPdir}/key.txt
         [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}
         rm -rf /root/lista-arq
