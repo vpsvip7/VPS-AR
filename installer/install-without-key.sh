@@ -239,14 +239,14 @@ install_official() {
   echo -e "$slogan"
   msg -bar
   clear && clear
-  mkdir /etc/VPS-Ar >/dev/null 2>&1
+  mkdir /etc/VPS-AR >/dev/null 2>&1
   cd /etc
   wget https://github.com/vpsvip7/VPS-AR/raw/main/VPS-AR.tar.xz >/dev/null 2>&1
   tar -xf VPS-AR.tar.xz >/dev/null 2>&1
   chmod +x VPS-AR.tar.xz >/dev/null 2>&1
-  rm -rf VPS-Ar.tar.xz
+  rm -rf VPS-AR.tar.xz
   cd
-  chmod -R 755 /etc/VPS-Ar
+  chmod -R 755 /etc/VPS-AR
   rm -rf /etc/VPS-AR/MEUIPvps
   echo "/etc/VPS-AR/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
   echo "/etc/VPS-AR/menu" >/usr/bin/VPSAR && chmod +x /usr/bin/VPSAR
