@@ -28,7 +28,7 @@ msg() {
   -bra) cor="${RED}" && echo -ne "${cor}${2}${SEMCOR}" ;;
   -nazu) cor="${COLOR[6]}${BLACK}" && echo -ne "${cor}${2}${SEMCOR}" ;;
   -gri) cor="\e[5m\033[1;100m" && echo -ne "${cor}${2}${SEMCOR}" ;;
-  "-bar2" | "-bar") cor="${RED}————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}" ;;
+  "-bar2" | "-bar") cor="${RED}———————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}" ;;
   esac
 }
 fun_bar() {
@@ -50,7 +50,7 @@ fun_bar() {
     tput cuu1
     tput dl1
   done
-  echo -e " \033[1;33m[\033[1;31m########################################\033[1;33m] - \033[1;32m100%\033[0m"
+  echo -e " \033[1;33m[\033[1;31m##############################\033[1;33m] - \033[1;32m100%\033[0m"
   sleep 1s
 }
 
@@ -179,7 +179,6 @@ install_start() {
   msg -bar
   os_system
   apt update -y
-  apt upgrade -y
 }
 
 install_continue() {
@@ -197,7 +196,7 @@ install_continue() {
   sleep 2
   tput cuu1 && tput dl1
   msg -bar
-  print_center -ama "If some of the dependencies fail!!!\nwhen finished, you can try to install\nthe same manually using the following command\napt install package_name"
+  print_center -ama "If some of the dependencies fail!!!\nwhen finished, yto install\nthe same manually using the following command\napt install package_name"
   msg -bar
   read -t 60 -n 1 -rsp $'\033[1;39m       << Press enter to continue >>\n'
 }
@@ -222,7 +221,7 @@ done
 
 clear && clear
 msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 VPS-AGN - SCRIPT  🐲 ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m ===>> ►► 🐲 VPS-AR - SCRIPT  🐲 ◄◄ <<===   \033[1;37m"
 msg -bar2
 print_center -ama "AVAILABLE SCRIPT LIST"
 msg -bar
@@ -231,7 +230,7 @@ wget https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/LINKS-LIBRARIES/SPR.s
 chmod +x /usr/bin/SPR
 
 
-#VPS-AGN 8.6 OFFICIAL
+#VPS-AR 1.1 OFFICIAL
 install_official() {
   clear && clear
   msg -bar
@@ -251,7 +250,7 @@ install_official() {
   rm -rf /etc/VPS-AR/MEUIPvps
   echo "/etc/VPS-AR/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
   echo "/etc/VPS-AR/menu" >/usr/bin/VPSAR && chmod +x /usr/bin/VPSAR
-  wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/monitor.sh -P /bin/
+  wget https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/LINKS-LIBRARIES/monitor.sh -P /bin/
   echo "$slogan" >/etc/VPS-AR/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
@@ -272,7 +271,7 @@ install_official() {
   [[ ! -d /etc/VPS-AR/Slow/install ]] && mkdir /etc/VPS-AR/Slow/install
   [[ ! -d /etc/VPS-AR/Slow/Key ]] && mkdir /etc/VPS-AR/Slow/Key
   touch /usr/share/lognull &>/dev/null
-  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/vpsvip7/VPS-AR/maIN/LINKS-LIBRARIES/resetsshdrop &>/dev/null
+  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/LINKS-LIBRARIES/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
   grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
   echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
@@ -317,7 +316,7 @@ install_official() {
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALL 8.5x OFFICIAL \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALL 1.1 OFFICIAL \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mEnter only the number according to your answer:\e[32m "
 read opcao
