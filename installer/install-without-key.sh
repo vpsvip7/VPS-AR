@@ -239,19 +239,19 @@ install_official() {
   echo -e "$slogan"
   msg -bar
   clear && clear
-  mkdir /etc/VPS-AR >/dev/null 2>&1
+  mkdir /etc/VPS-AGN >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/VPS-AR.tar.xz >/dev/null 2>&1
-  tar -xf VPS-AR.tar.xz >/dev/null 2>&1
-  chmod +x VPS-AR.tar.xz >/dev/null 2>&1
-  rm -rf VPS-AR.tar.xz
+  wget https://github.com/vpsvip7/VPS-AR/raw/main/VPS-AGN.tar.xz >/dev/null 2>&1
+  tar -xf VPS-AGN.tar.xz >/dev/null 2>&1
+  chmod +x VPS-AGN.tar.xz >/dev/null 2>&1
+  rm -rf VPS-AGN.tar.xz
   cd
-  chmod -R 755 /etc/VPS-AR
-  rm -rf /etc/VPS-AR/MEUIPvps
-  echo "/etc/VPS-AR/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-AR/menu" >/usr/bin/VPSAR && chmod +x /usr/bin/VPSAR
+  chmod -R 755 /etc/VPS-AGN
+  rm -rf /etc/VPS-AGN/MEUIPvps
+  echo "/etc/VPS-AGN/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+  echo "/etc/VPS-AGN/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
   wget https://raw.githubusercontent.com/vpsvip7/VPS-AR/main/LINKS-LIBRARIES/monitor.sh -P /bin/
-  echo "$slogan" >/etc/VPS-AR/message.txt
+  echo "$slogan" >/etc/VPS-AGN/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
   [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
@@ -303,7 +303,7 @@ install_official() {
   echo 'echo -e "\t\033[97mTO DISPLAY BASH PANEL TYPE: sudo VPSAGN or menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
   rm -rf /usr/bin/pytransform &>/dev/null
-  rm -rf VPS-AR.sh
+  rm -rf VPS-AGN.sh
   rm -rf lista-arq
   service ssh restart &>/dev/null
   clear && clear
